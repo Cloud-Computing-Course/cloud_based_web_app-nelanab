@@ -21,8 +21,7 @@ router.post('/', function(req, res, next) {
         var user = users[index];
        
         if(user.email == email && user.password == password){
-          console.log("works");
-          break;
+          res.render('confirmation', {first_name:user.first_name, last_name:user.last_name})
         }
         else{
           var error = "Incorrect email or password";
